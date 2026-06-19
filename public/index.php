@@ -32,6 +32,16 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
+if (isset($_GET['api']) && $_GET['api'] === 'stock_add') {
+
+    require_once __DIR__ . '/../src/Controller/Api/ApiStockController.php';
+
+    $api = new ApiStockController();
+    $api->addStock();
+
+    exit;
+}
+
 $role = $_SESSION['user']['role'];
 
 if ($role === 'ADMIN') {
