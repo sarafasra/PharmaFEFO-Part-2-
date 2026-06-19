@@ -47,39 +47,31 @@
 
     </div>
 
+    <div class="mt-6 bg-white p-6 rounded-lg shadow">
+
+    <h2 class="text-lg font-bold mb-4">
+        Ajouter un lot
+    </h2>
+
+     <form id="stockForm">
+
+    <input type="number" name="medicament_id" placeholder="ID médicament" class="border p-2 w-full mb-3 rounded">
+
+    <input type="text" name="numero_lot" placeholder="Nom / Lot" class="border p-2 w-full mb-3 rounded">
+
+    <input type="number" name="quantite" placeholder="Quantité" class="border p-2 w-full mb-3 rounded">
+
+    <input type="date" name="date_peremption" class="border p-2 w-full mb-3 rounded">
+
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+        Ajouter
+    </button>
+
+</form>
+</div>
+
     <!-- TABLE -->
-    <div class="mt-6 bg-white shadow rounded-lg overflow-hidden">
-
-        <div class="bg-gray-800 text-white px-4 py-3">
-            📦 Lots récents
-        </div>
-
-        <table class="w-full text-sm">
-            <thead class="bg-gray-100 text-left">
-                <tr>
-                    <th class="p-3">Produit</th>
-                    <th class="p-3">Quantité</th>
-                    <th class="p-3">Expiration</th>
-                    <th class="p-3">Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr class="border-t">
-                    <td class="p-3">Paracétamol</td>
-                    <td class="p-3">120</td>
-                    <td class="p-3">2026-12-01</td>
-                    <td class="p-3 text-green-600 font-bold">OK</td>
-                </tr>
-
-                <tr class="border-t">
-                    <td class="p-3">Amoxicilline</td>
-                    <td class="p-3">30</td>
-                    <td class="p-3">2026-02-10</td>
-                    <td class="p-3 text-yellow-600 font-bold">Alerte</td>
-                </tr>
-
+    
             </tbody>
         </table>
 
@@ -87,6 +79,5 @@
 
 </div>
 <script src="js/app.js"></script>
-
 </body>
 </html>

@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/environment.php';
-
 class Database
 {
     private static $pdo = null;
@@ -10,19 +8,25 @@ class Database
     {
         if (self::$pdo === null) {
 
-            $host = $_ENV['DB_HOST'];
-            $db   = $_ENV['DB_NAME'];
-            $user = $_ENV['DB_USER'];
-            $pass = $_ENV['DB_PASS'];
+            $host = "localhost";
+            $db   = "pharmafefo2"; // مهم: نفس اسم DB ديالك
+            $user = "root";
+            $pass = "";
 
-            self::$pdo = new PDO(
-                "mysql:host=$host;dbname=$db",
-                $user,
-                $pass,
-                [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                ]
-            );
+            try {
+
+                self::$pdo = new PDO(
+                    "mysql:host=$host;dbname=$db;charset=utf8",
+                    $user,
+                    $pass,
+                    [
+                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                    ]
+                );
+
+            } catch (PDOException $e) {
+                die("DB ERROR: " . $e->getMessage());
+            }
         }
 
         return self::$pdo;
