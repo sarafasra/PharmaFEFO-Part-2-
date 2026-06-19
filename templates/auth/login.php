@@ -75,7 +75,7 @@ body{
 
     <div class="mt-8 border-t pt-4 text-center text-xs text-slate-400">
         © 2026 PharmaFEFO
-    </div>
+    </div>  
 
 </div>
 
