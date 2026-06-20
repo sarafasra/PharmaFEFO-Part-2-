@@ -9,7 +9,7 @@ class Database
         if (self::$pdo === null) {
 
             $host = "localhost";
-            $db   = "pharmafefo2"; // مهم: نفس اسم DB ديالك
+            $db   = "pharmafefo2"; 
             $user = "root";
             $pass = "";
 

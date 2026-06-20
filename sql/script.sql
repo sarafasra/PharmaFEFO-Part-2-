@@ -1,6 +1,6 @@
--- Active: 1776249647084@@127.0.0.1@3306@pharmafefo
-CREATE DATABASE pharmafefo2;
-USE pharmafefo2;
+-- Active: 1776249647084@@127.0.0.1@3306@pharmafefo2
+CREATE DATABASE pharmafefo;
+USE pharmafefo;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -60,4 +60,12 @@ INSERT INTO alertes (lot_id, niveau, message, date_creation) VALUES
 (3, 'CRITICAL', 'Le lot LOT003 expire dans moins de 30 jours', '2026-06-10'),
 (4, 'CRITICAL', 'Le lot LOT004 est périmé', '2026-06-10');
 
+
+ALTER TABLE alertes
+DROP FOREIGN KEY alertes_ibfk_1;
+ALTER TABLE alertes
+ADD CONSTRAINT alertes_ibfk_1
+FOREIGN KEY (lot_id)
+REFERENCES lots(id)
+ON DELETE CASCADE;
 
