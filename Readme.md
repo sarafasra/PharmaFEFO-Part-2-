@@ -120,3 +120,4 @@ Séparation Web / API
 Bonne pratique MVC
 
 
+le lien de deploiment : [http://pharmafefo.rf.gd/](http://pharmafefo.rf.gd/)
